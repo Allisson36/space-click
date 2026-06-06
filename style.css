@@ -1,0 +1,149 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+
+    background:
+    radial-gradient(circle at top, #1c2b5a, #050816);
+
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:1000px;
+
+    display:flex;
+    gap:30px;
+
+    justify-content:center;
+    align-items:center;
+
+    flex-wrap:wrap;
+}
+
+.game{
+    text-align:center;
+}
+
+h1{
+    margin-bottom:20px;
+}
+
+#energia{
+    font-size:36px;
+    margin-bottom:10px;
+}
+
+#cliqueInfo{
+    opacity:.8;
+    margin-bottom:20px;
+}
+
+#planeta{
+    font-size:150px;
+
+    border:none;
+    background:none;
+
+    cursor:pointer;
+
+    transition:.15s;
+}
+
+#planeta:hover{
+    transform:scale(1.1);
+}
+
+#planeta:active{
+    transform:scale(.9);
+}
+
+.loja{
+    width:320px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(5px);
+
+    border-radius:15px;
+
+    padding:20px;
+}
+
+.loja h2{
+    margin-bottom:15px;
+}
+
+.loja button{
+    width:100%;
+
+    padding:15px;
+
+    margin-bottom:10px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.15s;
+}
+
+.loja button:hover{
+    transform:scale(1.03);
+}
+
+@media(max-width:700px){
+
+    #planeta{
+        font-size:120px;
+    }
+
+    #energia{
+        font-size:28px;
+    }
+
+    .loja{
+        width:100%;
+    }
+
+}
+
+.creditos{
+    position:fixed;
+
+    bottom:10px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    text-align:center;
+
+    font-size:14px;
+
+    opacity:0.8;
+}
+
+.creditos a{
+    color:white;
+    text-decoration:none;
+}
+
+.creditos a:hover{
+    text-decoration:underline;
+}
