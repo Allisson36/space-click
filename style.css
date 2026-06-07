@@ -5,56 +5,117 @@
 }
 
 body{
+
     min-height:100vh;
 
     background:
-    radial-gradient(circle at top, #1c2b5a, #050816);
+    radial-gradient(circle at top,#1c2b5a,#050816);
 
     color:white;
-    font-family:Arial, Helvetica, sans-serif;
+
+    font-family:Arial,Helvetica,sans-serif;
 
     display:flex;
     justify-content:center;
     align-items:center;
 
     padding:20px;
+
+    overflow-x:hidden;
+
+    position:relative;
+}
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+    radial-gradient(white 1px,transparent 1px);
+
+    background-size:50px 50px;
+
+    opacity:.25;
+
+    pointer-events:none;
+
+    animation:estrelas 30s linear infinite;
+}
+
+@keyframes estrelas{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(50px);
+    }
+
 }
 
 .container{
+
     width:100%;
-    max-width:1000px;
+    max-width:1200px;
 
     display:flex;
+
     gap:30px;
 
     justify-content:center;
-    align-items:center;
+    align-items:flex-start;
 
     flex-wrap:wrap;
+
+    z-index:2;
 }
 
 .game{
+
     text-align:center;
 }
 
 h1{
+
     margin-bottom:20px;
 }
 
 #energia{
+
     font-size:36px;
+
     margin-bottom:10px;
 }
 
 #cliqueInfo{
-    opacity:.8;
-    margin-bottom:20px;
+
+    margin-bottom:15px;
+
+    opacity:.85;
+}
+
+#conquista{
+
+    color:gold;
+
+    min-height:25px;
+
+    margin-bottom:15px;
+
+    font-weight:bold;
 }
 
 #planeta{
+
     font-size:150px;
 
     border:none;
+
     background:none;
 
     cursor:pointer;
@@ -63,14 +124,27 @@ h1{
 }
 
 #planeta:hover{
-    transform:scale(1.1);
+
+    transform:scale(1.08);
 }
 
 #planeta:active{
+
     transform:scale(.9);
 }
 
-.loja{
+.painel-lateral{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+}
+
+.loja,
+.stats{
+
     width:320px;
 
     background:rgba(255,255,255,.08);
@@ -82,11 +156,14 @@ h1{
     padding:20px;
 }
 
-.loja h2{
+.loja h2,
+.stats h2{
+
     margin-bottom:15px;
 }
 
 .loja button{
+
     width:100%;
 
     padding:15px;
@@ -105,29 +182,21 @@ h1{
 }
 
 .loja button:hover{
+
     transform:scale(1.03);
 }
 
-@media(max-width:700px){
+.stats p{
 
-    #planeta{
-        font-size:120px;
-    }
-
-    #energia{
-        font-size:28px;
-    }
-
-    .loja{
-        width:100%;
-    }
-
+    margin-bottom:10px;
 }
 
 .creditos{
+
     position:fixed;
 
     bottom:10px;
+
     left:50%;
 
     transform:translateX(-50%);
@@ -136,14 +205,68 @@ h1{
 
     font-size:14px;
 
-    opacity:0.8;
+    opacity:.8;
+
+    z-index:5;
 }
 
 .creditos a{
+
     color:white;
+
     text-decoration:none;
 }
 
 .creditos a:hover{
+
     text-decoration:underline;
+}
+
+.floatText{
+
+    position:absolute;
+
+    font-size:26px;
+
+    font-weight:bold;
+
+    color:#00ff95;
+
+    pointer-events:none;
+
+    animation:subir 1s forwards;
+}
+
+@keyframes subir{
+
+    0%{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+    100%{
+        opacity:0;
+        transform:translateY(-80px);
+    }
+
+}
+
+@media(max-width:700px){
+
+    #planeta{
+
+        font-size:120px;
+    }
+
+    #energia{
+
+        font-size:28px;
+    }
+
+    .loja,
+    .stats{
+
+        width:100%;
+    }
+
 }
